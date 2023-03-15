@@ -6,7 +6,7 @@ class PlantTagsController < ApplicationController
 
   def create
     @plant = Plant.find(params[:plant_id])
-    @tags = Tag.where(id: params[:plant_tag][:tag])
+    @tags = Tag.where(id: params.dig(:plant_tag, :tag))
     @tags.each do |tag|
       plant_tag = PlantTag.new(plant: @plant, tag: tag)
       plant_tag.save
