@@ -7,17 +7,11 @@ class PlantTagsController < ApplicationController
   def create
     @plant = Plant.find(params[:plant_id])
     @tags = Tag.where(id: params.dig(:plant_tag, :tag))
-    return render_new if @tags.empty?
-
-    ActiveRecord::Base.transaction do
-      @tags.each do |tag|
-        plant_tag = PlantTag.new(plant: @plant, tag: tag)
-        plant_tag.save!
-      end
-      redirect_to garden_path(@plant.garden)
+    @tags.each do |tag|
+      plant_tag = PlantTag.new(plant: @plant, tag: tag)
+      plant_tag.save
     end
-  rescue ActiveRecord::RecordInvalid
-    render_new
+    redirect_to garden_path(@plant.garden)
   end
 
   private
