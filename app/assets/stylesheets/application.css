@@ -33,3 +33,25 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.card img {
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-body {
+  background-color: rgb(66, 129, 73);
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  background-color: white;
+  padding: 10px;
+  overflow:hidden;
+  transition: transform 0.4s ease;
+  transform-origin: 50% 50%;
+  margin-right: ;
+}
