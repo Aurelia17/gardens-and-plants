@@ -1,12 +1,5 @@
-<div id="<%= dom_id garden %>">
-  <p>
-    <strong>Name:</strong>
-    <%= garden.name %>
-  </p>
-
-  <p>
-    <strong>Banner url:</strong>
-    <%= garden.banner_url %>
-  </p>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= garden.banner_url %>');">
+  <div class="container">
+    <h1 class="text-center"><%= garden.name %></h1>
+  </div>
 </div>
