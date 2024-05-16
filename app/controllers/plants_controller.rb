@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+
   def new
     @garden = Garden.find(params[:garden_id])
     @plant = Plant.new
@@ -13,6 +14,12 @@ class PlantsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @plant = Plant.find(params[:id])
+    @plant.destroy
+    redirect_to garden_path(@plant.garden), status: :see_other
   end
 
   private
