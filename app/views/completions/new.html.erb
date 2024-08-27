@@ -4,7 +4,7 @@
       <h1>Complete a chore for <%= @plant.name %></h1>
 
       <%= simple_form_for [@plant, @completion] do |f| %>
-        <%= f.association :chore, collection: Chore.all, as: :check_boxes, label: "What did you do?" %>
+        <%= f.association :chore, as: :check_boxes, label: "What did you do?" %>
         <%= f.submit "Complete", class: 'btn btn-primary' %>
       <% end %>
 
