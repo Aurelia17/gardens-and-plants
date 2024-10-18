@@ -1,16 +1,10 @@
 <div class="container my-5">
   <p style="color: green"><%= notice %></p>
-  <h1 class="text-center" style="color: #025342">Gardens</h1>
+  <h1 class="text-center mb-5" style="color: #025342">🌳 My Gardens 🌳</h1>
 
-  <div id="gardens">
+  <div class="row">
     <% @gardens.each do |garden| %>
       <%= render garden %>
-      <p>
-        <%= link_to "Show this garden", garden %>
-      </p>
     <% end %>
   </div>
-
-  <%= link_to "New garden", new_garden_path %>
-
 </div>

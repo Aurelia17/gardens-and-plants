@@ -1,12 +1,10 @@
-<div id="<%= dom_id garden %>">
-  <p>
-    <strong>Name:</strong>
-    <%= garden.name %>
-  </p>
-
-  <p>
-    <strong>Banner url:</strong>
-    <%= garden.banner_url %>
-  </p>
-
+<div class="col-lg-6">
+  <%= link_to garden, class: "text-decoration-none", style: "color: black;" do %>
+    <div class="card", style="width 25rem;">
+      <%= image_tag garden.banner_url, alt: "#{garden.name}" %>
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= garden.name %></h5>
+      </div>
+    </div>
+  <% end %>
 </div>

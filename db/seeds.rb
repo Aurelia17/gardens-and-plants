@@ -27,9 +27,3 @@ Plant.create!(
   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/dieffenbachia.jpg",
   garden: other
 )
-
-names = %w(Water Mist Clean Feed Repot Rotate)
-
-names.each do |name|
-  Chore.create!(name: name)
-end
