@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row my-5">
     <div class="col-4" data-controller="form">
-      <button class="btn btn-secondary display-form" data-form-target="button" data-action="click->form#display">Add a plant</button>
+      <button class="btn btn-success display-form" data-form-target="button" data-action="click->form#display">Add a plant</button>
 
       <%= simple_form_for [@garden, @plant], html: {class: "d-none", data: {form_target: "form"}} do |f| %>
         <%= f.input :name, placeholder: "Palm tree" %>
