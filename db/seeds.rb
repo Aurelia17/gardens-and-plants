@@ -1,3 +1,4 @@
+Chore.destroy_all if Rails.env.development?
 Garden.destroy_all if Rails.env.development?
 
 little = Garden.create!(
@@ -27,3 +28,10 @@ Plant.create!(
   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/dieffenbachia.jpg",
   garden: other
 )
+
+chores_name = %i[Water Mist Clean Feed Repot Rotate]
+chores_name.each do |name|
+  Chore.create!(name: name)
+end
+
+puts "Gardens, Plants and Chores created !"
