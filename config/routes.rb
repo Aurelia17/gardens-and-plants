@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     end
   end
   resources :plants, only: :destroy do
-    resources :completions, only: %i[new create show]
+    resources :completions, only: %i[new create]
   end
 end
